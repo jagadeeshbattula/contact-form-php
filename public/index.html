@@ -50,17 +50,15 @@
     <form id="contact-form" name="contact-form" method="POST">
         <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" value="test test" class="form-control" id="name" placeholder="Enter your name" name="name">
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required>
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
-
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
         </div>
         <div class="form-group">
             <label for="phone">Phone number:</label>
-            <input type="text" maxlength="10" class="form-control" id="phone" minlength="10" placeholder="Enter phone number" name="phone">
-
+            <input type="number" class="form-control" id="phone" placeholder="Enter phone number" name="phone" required>
         </div>
         <div class="form-group">
             <label for="comment">How did you found about us:</label>
@@ -68,7 +66,7 @@
         </div>
         <div class="form-group">
             <label for="budget">What is your budget range</label>
-            <input type="text" class="form-control" id="budget" min="0" placeholder="Enter your budget" name="budget">
+            <input type="number" class="form-control" id="budget" min="0" placeholder="Enter your budget" name="budget">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -13,11 +13,11 @@ function sanitizeInputs(array $inputs) {
     }
 
     if(isset($inputs[PHONE_KEY])) {
-        $sanitizedInputs[PHONE_KEY] = filter_var($inputs[PHONE_KEY], FILTER_VALIDATE_INT);
+        $sanitizedInputs[PHONE_KEY] = filter_var($inputs[PHONE_KEY], FILTER_SANITIZE_NUMBER_INT);
     }
 
     if(isset($inputs[BUDGET_KEY])) {
-        $sanitizedInputs[BUDGET_KEY] = filter_var($inputs[BUDGET_KEY], FILTER_VALIDATE_INT);
+        $sanitizedInputs[BUDGET_KEY] = filter_var($inputs[BUDGET_KEY], FILTER_SANITIZE_NUMBER_INT);
     }
 
     if(isset($inputs[COMMENT_KEY])) {
@@ -33,6 +33,10 @@ function validateInputs(array $inputs) {
 
     foreach (MANDATORY_INPUTS as $input => $errorMessage) {
         if (empty($inputs[$input])) {
+            $errors[$input] = $errorMessage;
+        }
+
+        if ($input === PHONE_KEY && strlen($inputs[PHONE_KEY]) !== PHONE_NUMBER_DIGITS_ALLOWED) {
             $errors[$input] = $errorMessage;
         }
     }

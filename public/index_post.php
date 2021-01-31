@@ -30,11 +30,11 @@ if($_POST) {
         ]);
     }
     exit();
-} else {
-    http_response_code(RESPONSE_NOT_FOUND_CODE);
-    echo json_encode([
-        RESPONSE_STATUS_KEY => false,
-        RESPONSE_MESSAGE_KEY => ERROR_RESPONSE_MESSAGE
-    ]);
-    exit();
 }
+
+http_response_code(RESPONSE_NOT_FOUND_CODE);
+echo json_encode([
+    RESPONSE_STATUS_KEY => false,
+    RESPONSE_MESSAGE_KEY => ERROR_RESPONSE_MESSAGE
+]);
+exit();

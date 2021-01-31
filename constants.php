@@ -21,8 +21,12 @@ const SUCCESS_RESPONSE_MESSAGE = "Your request submitted successfully. We will r
 const ERROR_RESPONSE_MESSAGE = "Some thing went wrong. Please try again later!";
 
 const MANDATORY_INPUTS = [
-    NAME_KEY => 'Provide valid name'
+    NAME_KEY => 'Provide valid name',
+    EMAIL_KEY => 'Provide valid email',
+    PHONE_KEY => 'Provide valid 10 digit phone'
 ];
+
+const PHONE_NUMBER_DIGITS_ALLOWED = 10;
 
 const RESPONSE_SUCCESS_CODE = 200;
 

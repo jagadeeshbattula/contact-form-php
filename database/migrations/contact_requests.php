@@ -1,14 +1,14 @@
 <?php
 
-include "../../databaseConnection.php";
+include "./databaseConnection.php";
 
 $databaseConnection = setDatabaseConnection();
 
 $sql = "CREATE TABLE contact_requests(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(30) NOT NULL,
-    email VARCHAR(30) NOT NULL,
-    phone VARCHAR(10) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(100) NOT NULL,
     budget VARCHAR(100) NULL,
     comment TEXT(10000) NULL
 )";
