@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home - Jagadeesh Real Estate</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="index.js"></script>
+
+    <style>
+        #errors-container, #success-container {
+            display: none;
+        }
+
+        .error-text {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+    <h1>Jagadeesh Real Estate</h1>
+    <p>Welcome to our real estate site!</p>
+</div>
+
+<div class="container">
+    <p>
+        Thank you for your interest in this property.
+        Fill in your information below if you are interested to know more about this property.
+        We will reach out to you.
+    </p>
+
+    <div id="success-container" class="alert alert-success alert-dismissible">
+        <strong>Success!</strong> <span id="success-message"></span>
+    </div>
+
+    <div class="card mb-3" id="errors-container">
+        <div class="card-header">Errors</div>
+        <div class="card-body">
+            <p class="card-text error-text" id="errors"></p>
+        </div>
+    </div>
+
+    <form id="contact-form" name="contact-form" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" value="test test" class="form-control" id="name" placeholder="Enter your name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone number:</label>
+            <input type="text" maxlength="10" class="form-control" id="phone" minlength="10" placeholder="Enter phone number" name="phone">
+
+        </div>
+        <div class="form-group">
+            <label for="comment">How did you found about us:</label>
+            <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="budget">What is your budget range</label>
+            <input type="text" class="form-control" id="budget" min="0" placeholder="Enter your budget" name="budget">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
