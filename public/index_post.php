@@ -3,6 +3,7 @@
 include "../validate.php";
 include "../constants.php";
 include "../store.php";
+include "../emailer.php";
 
 if($_POST) {
 
@@ -22,7 +23,7 @@ if($_POST) {
     $response = storeContactRequest($inputs);
 
     if ($response) {
-        //mail();
+        sendEmail($inputs);
         http_response_code(RESPONSE_SUCCESS_CODE);
         echo json_encode([
             RESPONSE_STATUS_KEY => true,
